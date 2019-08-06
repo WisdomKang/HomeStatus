@@ -1,0 +1,21 @@
+{
+  "name": "nodeserver",
+  "version": "1.0.0",
+  "description": "Node.js사용하여 만든 서버 부분입니다.",
+  "main": "main.js",
+  "scripts": {
+    "test": "node Server/main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/WisdomKang/HomeStatus/tree/master/nodeServer"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^4.3.1",
+    "ejs": "^2.6.2",
+    "express": "^4.17.1",
+    "mqtt": "^3.0.0"
+  }
+}
