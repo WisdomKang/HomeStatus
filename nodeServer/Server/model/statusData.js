@@ -5,8 +5,8 @@ var statusSchema = new Schema({
     temp : Number,
     humi : Number,
     dust : Number,
-    lastCommand : String,
+    last_command : String,
     time : Date
 });
 
-module.exports = mongoose.model( "status" , statusSchema , "status");
+module.exports = mongoose.model( "status" , statusSchema );
