@@ -1,0 +1,20 @@
+{
+  "name": "nodeserver",
+  "description": "Node.js사용하여 만든 서버 부분입니다.",
+  "main": "main.js",
+  "authors": [
+    "KangHyeonmyeong <buckgusaud@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/WisdomKang/HomeStatus",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^4.3.1"
+  }
+}

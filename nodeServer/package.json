@@ -2,9 +2,9 @@
   "name": "nodeserver",
   "version": "1.0.0",
   "description": "Node.js사용하여 만든 서버 부분입니다.",
-  "main": "main.js",
+  "main": "init.js",
   "scripts": {
-    "test": "supervisor Server/main.js"
+    "test": "supervisor Server/init.js"
   },
   "repository": {
     "type": "git",
@@ -13,9 +13,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "bootstrap": "^4.3.1",
     "ejs": "^2.6.2",
     "express": "^4.17.1",
+    "mongoose": "^5.6.9",
     "mqtt": "^3.0.0"
   }
 }
