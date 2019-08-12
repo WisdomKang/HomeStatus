@@ -4,6 +4,8 @@ var mainController = require("../controllers/mainController");
 var statusDataController = require("../controllers/statusDataController");
 
 router.get("/dashboard", mainController.mainPage);
+router.get("/login", mainController.loginPage);
+
 router.post("/status/save" , (req, res)=>{
     console.log( req.body);
     var result = statusDataController.statusRecord(req.body);

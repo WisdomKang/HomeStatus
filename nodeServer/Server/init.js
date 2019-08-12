@@ -1,11 +1,12 @@
 console.log("HomeStatus Server Setting Start.");
-var express = require("express");               //express프레임워크
-    app = express();                            //설정
-    path=require("path");                       //경로설정 컴포넌트?
-    ejs = require("ejs");                       //뷰 엔진
+var express = require("express"),                           //express프레임워크
+    app = express(),                                        //설정
+    session = require("express-session"),
+    path=require("path"),                                   //경로설정 컴포넌트?
+    ejs = require("ejs"),                                   //뷰 엔진
     router = require("./routes/route");
 
-
+var mongoSession = require("connect-mongo");
 //MongoDB Set and Connect
 var mongoose = require("mongoose");
 var db = mongoose.connection;
@@ -14,6 +15,7 @@ db.once("open" , ()=>{
     console.log("Connected to mongod server");
 });
 mongoose.connect('mongodb://localhost/home',{useNewUrlParser:true});
+
 
 
 //MQTT Connect
@@ -34,14 +36,22 @@ mqttClient.on("message" , ( topic , message )=>{
 });
 
 
-app.set('view engine', 'ejs');                  //서버 뷰 엔진 설정
-app.set('views', './Server/views');             //view경로 설정 (default가 views라고는 함)
+app.set('view engine', 'ejs');                              //서버 뷰 엔진 설정
+app.set('views', './Server/views');                         //view경로 설정 (default가 views라고는 함)
 
-app.use(express.json());                        //express에 내장 되어있는 parser 사용.
-app.use(router);                                //router 설정
+app.use(express.json());                                    //express에 내장 되어있는 parser 사용.
+app.use(router);                                            //router 설정
 
-//라우터 설정보다 및에 있어야 Http 요청시 위 설정의 결로를 우선 탐색하여 더 빠른 응답속도를 보여준다.
-app.use(express.static('./Server/page.js'));    //Static resourece(정적리소스) 설정
+app.use( session({
+    saveUninitialized:true,
+    resave:true,
+    secret:'secretsessionkey',
+    store: mongoSession.MongoStore
+}));
+
+//Static resource path 설정
+app.use(express.static('Server/views'));                  //html에서 사용하는 js 파일
+app.use("/static", express.static("bower_components"));     //bower로 관리되는 외부 라이브러리 경로
 
 const httpServer = require("http").createServer(app);
 httpServer.listen( 8080, ()=>{
