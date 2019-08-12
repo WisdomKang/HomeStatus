@@ -12,7 +12,7 @@ var mongoose = require("mongoose");
 var db = mongoose.connection;
 db.on("error", console.error);
 db.once("open" , ()=>{
-    console.log("Connected to mongod server");
+    console.log("Connected to mongodb server");
 });
 mongoose.connect('mongodb://localhost/home',{useNewUrlParser:true});
 
@@ -50,8 +50,9 @@ app.use( session({
 }));
 
 //Static resource path 설정
-app.use(express.static('Server/views'));                  //html에서 사용하는 js 파일
+app.use(express.static('Server/views'));                    //html에서 사용하는 js 파일
 app.use("/static", express.static("bower_components"));     //bower로 관리되는 외부 라이브러리 경로
+app.use("/asset" , express.static("Server/asset"));
 
 const httpServer = require("http").createServer(app);
 httpServer.listen( 8080, ()=>{

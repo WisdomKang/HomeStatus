@@ -9,27 +9,47 @@
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="/static/bootstrap/dist/css/bootstrap.min.css" >
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
 
     <!-- Custom styles for this template -->
     <link href="/dashboard/dashboard.css" rel="stylesheet">
   </head>
   <body>
-    <nav class="navbar navbar-list bg-light">
-      <ul class="nav nav-tabs">
-          <li class="nav-item">
-            <a class="nav-link active" href="#">Active</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-          </li>
-      </ul>
-    </nav>
+      <nav class="nav nav-pills nav-justified">
+          <a class="nav-item nav-link active" href="#status" role="tab" data-toggle="tab" aria-controls="status">Status</a>
+          <a class="nav-item nav-link" href="#control" role="tab" data-toggle="tab" aria-controls="control">Control</a>
+      </nav>
+
+    <!--탭 내용들-->
+    <div class="tab-content mt-3" id="tabContent">
+
+      <!--상태 보는 텝내용-->
+      <div class="tab-pane fade show active" id="status" role="tabpanel" aria-labelledby="status-tab">
+        <div class="container">
+          <div class="card" >
+            <div class="card-body">
+              <h5 class="card-title">Home</h5>
+              <h6 class="card-subtitle mb-2 text-muted">집안 상태</h6>
+              <p class="card-text">집 내부, 외부(API이용 지역 날씨로 확인) 내용 표기</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--제어 탭 내용-->
+      <div class="tab-pane fade" id="control" role="tabpanel" aria-labelledby="control-tab">
+        <div class="container">
+            <div class="card" >
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                <p class="card-text">Control Device is here.</p>
+              </div>
+            </div>
+        </div>
+      </div>
+
+    </div>
   </body>
   <!-- Bootstrap core js-->
   <script src="/static/jquery/dist/jquery.js"></script>

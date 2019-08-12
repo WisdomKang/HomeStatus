@@ -12,5 +12,13 @@ router.post("/status/save" , (req, res)=>{
     res.end();
 });
 
+router.post("/login/sign", (req,res)=>{
+    console.log( req.session );
+    if( !req.session ){
+        req.session.user = "ji";
+    }
+    //mainController.login(req,res);
+});
+
 module.exports = router;        //requier를 통해 호출되면 이 모듈이 리턴된다?
 

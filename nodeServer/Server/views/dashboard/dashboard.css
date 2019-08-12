@@ -1,3 +1,10 @@
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link{
+    background-color: rgb(58, 53, 53);
+}
+a{
+    color : black;
+}
+
 @media(max-width: 767.98px){
     
 }
