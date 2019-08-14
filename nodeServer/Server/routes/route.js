@@ -14,9 +14,8 @@ router.post("/status/save" , (req, res)=>{
 
 router.post("/login/sign", (req,res)=>{
     console.log( req.session );
-    if( !req.session ){
-        req.session.user = "ji";
-    }
+    req.session.login = true;
+    res.json({login: true});
     //mainController.login(req,res);
 });
 
