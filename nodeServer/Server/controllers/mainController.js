@@ -4,6 +4,7 @@ var mainController = {
         res.render("dashboard/dashboard");
     },
     loginPage : function(req, res){
+        req.session = "hi";
         res.render("login/login");
     },
     login : function(req, res){
