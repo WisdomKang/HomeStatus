@@ -7,15 +7,15 @@ var express = require("express"),                           //express프레임�
     router = require("./routes/route");
 
 var MongoStore = require("connect-mongo")(session);
-//MongoDB Set and Connect
+//MongoDB Setting
 var mongoose = require("mongoose");
-
 const mongoConnection = mongoose.createConnection('mongodb://localhost/home', {useNewUrlParser:true});
 mongoConnection.on("error", console.error);
 mongoConnection.once("open" , ()=>{
     console.log("Connected to mongodb server");
 });
 
+//session setting
 app.use( session({
     saveUninitialized:true,
     resave:true,
@@ -23,22 +23,30 @@ app.use( session({
     store: new MongoStore( { mongooseConnection: mongoConnection})
 }));
 
-//MQTT Connect
-// var mqtt = require("mqtt");
-// var mqttClient = mqtt.connect("mqtt://localhost:1883");
+//MQTT Connect setting
+var mqtt = require("mqtt");
+var mqttOptions = {
+    clientId: "guest",
+    username: "guest",
+    password: "guest"
+}
+var mqttClient = mqtt.connect("mqtt://localhost:1883", mqttOptions);
 
-// mqttClient.on("connect" , ()=>{
-//     mqttClient.subscribe("/home/status", (err)=>{
-//         if(err) console.log("Check Connection or Setting");
-//         else console.log("Subscribe topic : /home/status");
-//     });
-// });
+console.log("MQTT Connected :" + mqttClient.connected );
+mqttClient.on("connect" , ()=>{
+    console.log("Connected to MQTT broker");
+    console.log("MQTT Connected :" + mqttClient.connected );
+    mqttClient.subscribe("/home/status", (err)=>{
+        if(err) console.log("Check Connection or Setting");
+        else console.log("'home/status' subscribe");
+    });
+});
 
-// mqttClient.on("message" , ( topic , message )=>{
-//     console.log("message :" + message);
-//     let data = JSON.parse(message);
-//     console.log( JSON.stringify( data, null , 4));
-// });
+mqttClient.on("message" , ( topic , message )=>{
+    console.log("message :" + message);
+    let data = JSON.parse(message);
+    console.log( JSON.stringify( data, null , 4));
+});
 
 
 app.set('view engine', 'ejs');                              //서버 뷰 엔진 설정
@@ -57,8 +65,11 @@ app.use("/asset" , express.static("Server/asset"));
 const httpServer = require("http").createServer(app);
 httpServer.listen( 8080, ()=>{
     console.log("Starting Server is Complete.");
-    console.log("Listening... ");
 });
+
+
+
+
 
 
 

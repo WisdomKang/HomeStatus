@@ -13,9 +13,10 @@ router.post("/status/save" , (req, res)=>{
 });
 
 router.post("/login/sign", (req,res)=>{
-    console.log( req.session );
-    req.session.login = true;
-    res.json({login: true});
+    console.log("re");
+    console.log( JSON.stringify( req.body, null ,4));
+    res.json( req.body);
+    res.end();
     //mainController.login(req,res);
 });
 

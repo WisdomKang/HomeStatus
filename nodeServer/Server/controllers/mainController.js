@@ -1,6 +1,7 @@
 
 var mainController = {
     mainPage : function(req, res){
+        console.log( req.session.id );
         res.render("dashboard/dashboard");
     },
     loginPage : function(req, res){
@@ -9,21 +10,8 @@ var mainController = {
     login : function(req, res){
         console.log(req.body);
         var reqID = req.body.id;
-        var reqPwd = req.body.password;
-
-        if(req.session){
-            console.log("로그인 되어있음");
-            req.session.user = "id";
-            req.session.name = "Kang";
-            res.json({success:ture , session: "old"});
-        }else{
-            req.session.user = {
-                id: reqID,
-                pw: reqPwd,
-                authorized : true
-            };
-            res.json({success:ture, session:"new"});
-        }
+        var reqPwd = req.body.password; 
+        res.json({ login:true });
     }
 }
 module.exports = mainController;
