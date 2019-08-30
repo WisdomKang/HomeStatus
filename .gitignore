@@ -1,3 +1,4 @@
 #git 업데이트시 관리에서 제외되는 경로 및 파일 명시
 nodeServer/node_modules
 bower_components
+log/

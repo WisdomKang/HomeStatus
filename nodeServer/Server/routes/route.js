@@ -1,24 +1,17 @@
 //express에서 Router객체를 받아 설정후 리턴!
 const router = require("express").Router();
 var mainController = require("../controllers/mainController");
-var statusDataController = require("../controllers/statusDataController");
+var statusDataController = require("../controllers/StatusDataController");
+
+router.get("/", mainController.auth_check, function(){ return res.end();});
 
 router.get("/dashboard", mainController.mainPage);
-router.get("/login", mainController.loginPage);
+router.get("/loginPage", mainController.loginPage);
 
-router.post("/status/save" , (req, res)=>{
-    console.log( req.body);
-    var result = statusDataController.statusRecord(req.body);
-    res.end();
-});
+router.post("/login/sign", mainController.login);
+router.post("/logout", mainController.logout);
 
-router.post("/login/sign", (req,res)=>{
-    console.log("re");
-    console.log( JSON.stringify( req.body, null ,4));
-    res.json( req.body);
-    res.end();
-    //mainController.login(req,res);
-});
+router.get("/home/status", statusDataController.statusSearch);
 
 module.exports = router;        //requier를 통해 호출되면 이 모듈이 리턴된다?
 

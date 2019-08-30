@@ -9,4 +9,4 @@ var statusSchema = new Schema({
     time : Date
 });
 
-module.exports = mongoose.model( "status" , statusSchema );
+module.exports = mongoose.model( "status" , statusSchema, "status" );

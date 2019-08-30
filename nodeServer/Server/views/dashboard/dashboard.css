@@ -6,5 +6,13 @@ a{
 }
 
 @media(max-width: 767.98px){
-    
+    .wrapper{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 5px;
+        grid-auto-rows: minmax(100px, auto);
+    }
+    .status{
+        font-size: 40px;
+    }
 }

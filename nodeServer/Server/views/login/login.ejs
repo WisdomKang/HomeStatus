@@ -32,16 +32,15 @@
       
       <form class="form-signin" id="loginForm" method="post" action="/login/sign" enctype="application/json">
         <img class="mb-4" src="/asset/img/discat.png" alt="이미지 없당...^^;;" width="72" height="72">
-      <h1 class="h3 mb-3 font-weight-normal">Welcome Home</h1>
-      <label for="ID" class="sr-only">ID</label>
-      <input type="text" id="ID" name="identify" class="form-control" placeholder="ID" required autofocus>
-      <label for="inputPassword" class="sr-only">Password</label>
-      <input type="password" id="Password" name="password" class="form-control" placeholder="Password" required>
-      <div class="checkbox mb-3">
-  </div>
-  <button class="btn btn-lg btn-primary btn-block" type="button" onclick="loginSubmit();">Sign in</button>
-</form>
+        <h1 class="h3 mb-3 font-weight-normal">Welcome Home</h1>
+        <label for="ID" class="sr-only">ID</label>
+        <input type="text" id="ID" name="identify" class="form-control" value="2342" placeholder="ID" required autofocus>
+        <label for="inputPassword" class="sr-only">Password</label>
+        <input type="password" id="Password" name="password" value="234" class="form-control" placeholder="Password" required>
+        <button class="btn btn-lg btn-primary btn-block" type="button" onclick="loginSubmit();" >Sign in</button>
+      </form>
 </body>
+
 <script src="/static/jquery/dist/jquery.js"></script>
     <script src="/login/login.js"></script>
 </html>

@@ -4,7 +4,8 @@
   "description": "Node.js사용하여 만든 서버 부분입니다.",
   "main": "init.js",
   "scripts": {
-    "test": "supervisor Server/init.js"
+    "start": "forever Server/Serv"
+    ,"test":"supervisor Server/Server.js"
   },
   "repository": {
     "type": "git",
@@ -17,7 +18,11 @@
     "ejs": "^2.6.2",
     "express": "^4.17.1",
     "express-session": "^1.16.2",
+    "moment": "^2.24.0",
+    "moment-timezone": "^0.5.26",
     "mongoose": "^5.6.9",
-    "mqtt": "^3.0.0"
+    "mqtt": "^3.0.0",
+    "winston": "^3.2.1",
+    "winston-daily-rotate-file": "^3.10.0"
   }
 }

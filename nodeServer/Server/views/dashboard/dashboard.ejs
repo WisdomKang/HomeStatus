@@ -28,9 +28,24 @@
         <div class="container">
           <div class="card" >
             <div class="card-body">
-              <h5 class="card-title">Home</h5>
-              <h6 class="card-subtitle mb-2 text-muted">집안 상태</h6>
-              <p class="card-text">집 내부, 외부(API이용 지역 날씨로 확인) 내용 표기</p>
+                <div class="wrapper">
+                  <div class="text-center">
+                    Temperature
+                    <p id="temp" class="status">12℃</p>
+                  </div>
+                  <div class="text-center">
+                    Humidity
+                    <p id="humi" class="status">23%</p>
+                  </div>
+                  <div class="text-center">
+                    Dust
+                    <p id="dust" class="status">23ppm</p>
+                  </div>
+                  <div class="text-center">
+                    <img src="/asset/img/discat.png" width="40px" height="40px">
+                  </div>
+              </div>
+              <div class="float-right" id="uptTime">update time</div>
             </div>
           </div>
         </div>
@@ -43,6 +58,15 @@
               <div class="card-body">
                 <h5 class="card-title">Card title</h5>
                 <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                <form action="/login/sign" method="POST" enctype="application/json">
+                  First name:<br>
+                  <input type="text" name="firstname" value="Mickey">
+                  <br>
+                  Last name:<br>
+                  <input type="text" name="lastname" value="Mouse">
+                  <br><br>
+                  <input type="submit" value="Submit">
+                </form> 
                 <p class="card-text">Control Device is here.</p>
               </div>
             </div>
