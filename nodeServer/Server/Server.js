@@ -23,7 +23,7 @@ app.use( session({
 
 //MQTT Connect setting
 var mqttConnect = require('./connProccess/mqttConnect');
-mqttConnect.MqttConnect();
+//mqttConnect.MqttConnect();
 
 //view engine setting
 app.set('view engine', 'ejs');                              //서버 뷰 엔진 설정

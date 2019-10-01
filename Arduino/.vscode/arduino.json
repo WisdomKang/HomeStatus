@@ -1,0 +1,6 @@
+{
+    "sketch": "HomeStastusSensor.ino",
+    "board": "arduino:avr:uno",
+    "port": "COM3",
+    "programmer": "AVRISP mkII"
+}

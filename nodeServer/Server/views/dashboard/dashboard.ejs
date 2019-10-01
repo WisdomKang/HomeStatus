@@ -10,7 +10,6 @@
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="/static/bootstrap/dist/css/bootstrap.min.css" >
     <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
-
     <!-- Custom styles for this template -->
     <link href="/dashboard/dashboard.css" rel="stylesheet">
   </head>
@@ -19,7 +18,9 @@
           <a class="nav-item nav-link active" href="#status" role="tab" data-toggle="tab" aria-controls="status">Status</a>
           <a class="nav-item nav-link" href="#control" role="tab" data-toggle="tab" aria-controls="control">Control</a>
       </nav>
-
+      <div id="app">
+        {{ message }}
+      </div>
     <!--탭 내용들-->
     <div class="tab-content mt-3" id="tabContent">
 
@@ -80,4 +81,5 @@
   <script src="/static/bootstrap/dist/js/bootstrap.min.js" ></script>
   <!-- Custom js file-->
   <script src="/dashboard/dashboard.js"></script>
+
 </html>

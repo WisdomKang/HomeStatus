@@ -1,0 +1,38 @@
+{
+    "configurations": [
+        {
+            "name": "Win32",
+            "includePath": [
+                "D:\\Arduino\\libraries\\ArduinoJson\\src",
+                "D:\\Arduino\\libraries\\ArduinoThread",
+                "D:\\Arduino\\libraries\\PubSubClient\\src",
+                "C:\\Program Files (x86)\\Arduino\\libraries\\WiFi\\src",
+                "D:\\Arduino\\libraries\\WiFiEsp\\src",
+                "D:\\Arduino\\libraries\\DHT_sensor_library",
+                "D:\\Arduino\\libraries\\jm_LiquidCrystal_I2C",
+                "D:\\Arduino\\libraries\\LiquidCrystal_I2C",
+                "C:\\Users\\buckg\\AppData\\Local\\Arduino15\\packages\\esp8266\\tools\\**",
+                "C:\\Users\\buckg\\AppData\\Local\\Arduino15\\packages\\esp8266\\hardware\\esp8266\\2.5.2\\**",
+                "C:\\Users\\buckg\\OneDrive\\문서\\Arduino\\libraries\\DHT_sensor_library",
+                "C:\\Program Files (x86)\\Arduino\\tools\\**",
+                "C:\\Users\\buckg\\OneDrive\\문서\\Arduino\\libraries\\Adafruit_Sensor-master",
+                "C:\\Program Files (x86)\\Arduino\\hardware\\arduino\\avr\\**",
+                "C:\\Program Files (x86)\\Arduino\\hardware\\arduino\\avr\\cores\\arduino",
+                "C:\\Program Files (x86)\\Arduino\\hardware\\tools\\avr\\avr\\include",
+                "C:\\Program Files (x86)\\Arduino\\hardware\\arduino\\avr\\variants\\circuitplay32u4",
+                "C:\\Program Files (x86)\\Arduino\\libraries\\**"
+            ],
+            "forcedInclude": [
+                "C:\\Program Files (x86)\\Arduino\\hardware\\arduino\\avr\\cores\\arduino\\Arduino.h"
+            ],
+            "intelliSenseMode": "msvc-x64",
+            "compilerPath": "C:\\MinGW\\bin\\gcc.exe",
+            "cStandard": "c11",
+            "cppStandard": "c++17",
+            "defines": [
+                "USBCON"
+            ]
+        }
+    ],
+    "version": 4
+}
