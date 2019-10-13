@@ -3,13 +3,13 @@
         {
             "name": "Win32",
             "includePath": [
+                "D:\\Arduino\\libraries\\Adafruit_ESP8266",
                 "D:\\Arduino\\libraries\\ArduinoJson\\src",
                 "D:\\Arduino\\libraries\\ArduinoThread",
                 "D:\\Arduino\\libraries\\PubSubClient\\src",
                 "C:\\Program Files (x86)\\Arduino\\libraries\\WiFi\\src",
                 "D:\\Arduino\\libraries\\WiFiEsp\\src",
                 "D:\\Arduino\\libraries\\DHT_sensor_library",
-                "D:\\Arduino\\libraries\\jm_LiquidCrystal_I2C",
                 "D:\\Arduino\\libraries\\LiquidCrystal_I2C",
                 "C:\\Users\\buckg\\AppData\\Local\\Arduino15\\packages\\esp8266\\tools\\**",
                 "C:\\Users\\buckg\\AppData\\Local\\Arduino15\\packages\\esp8266\\hardware\\esp8266\\2.5.2\\**",
