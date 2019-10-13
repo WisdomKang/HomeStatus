@@ -16,10 +16,10 @@ void setup_wifi() {
   WiFi.begin(ssid, password);
   while (WiFi.status() != WL_CONNECTED) {
     delay(500);
-    Serial.println("00");
+    Serial.print("00");
   }
   randomSeed(micros());
-  Serial.println("01");
+  Serial.print("01");
 }
 
 void callback(char* topic, byte* payload, unsigned int length) {
@@ -28,10 +28,9 @@ void callback(char* topic, byte* payload, unsigned int length) {
     data[0] = '3';
     data[1] = topic[13];
     data[2] = (char)payload[0];
-    //Serial.println 사용시 끝을 알리는 문자를 넣어주어야합니다.
     data[3] = '\0';
 
-    Serial.println(data);
+    Serial.print(data);
 }
 
 void reconnect() {
@@ -48,9 +47,9 @@ void reconnect() {
     if (client.connect(clientId.c_str())) {
       client.publish("home/status","esp connected");
       client.subscribe("home/control/#");
-      Serial.println("11");
+      Serial.print("11");
     } else {
-      Serial.println("10");
+      Serial.print("10");
       delay(5000);
     }
   }
@@ -65,7 +64,6 @@ void setup() {
 }
 
 void loop() {
-
   if (!client.connected()) {
     reconnect();
   }
@@ -73,7 +71,6 @@ void loop() {
     String jsonDataStr = "";
     jsonDataStr = Serial.readString();
     client.publish("home/status", jsonDataStr.c_str());
-    
   }
   client.loop();
 
