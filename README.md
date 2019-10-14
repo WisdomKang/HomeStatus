@@ -3,7 +3,7 @@
 
 WebServer는 Node.js로 구현.
 
-하드웨어는 Arduino, ESP8266을 이용하여 구성.
+는 Arduino, ESP8266을 이용하여 구성.
 
 전체적인 흐름 및 서버와 프로토콜은 ... 파일
 
