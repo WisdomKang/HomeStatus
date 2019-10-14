@@ -4,7 +4,7 @@
   "description": "Node.js사용하여 만든 서버 부분입니다.",
   "main": "init.js",
   "scripts": {
-    "start": "forever Server/Serv"
+    "start": "forever Server/Server.js"
     ,"test":"supervisor Server/Server.js"
   },
   "repository": {

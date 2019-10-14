@@ -18,9 +18,6 @@
           <a class="nav-item nav-link active" href="#status" role="tab" data-toggle="tab" aria-controls="status">Status</a>
           <a class="nav-item nav-link" href="#control" role="tab" data-toggle="tab" aria-controls="control">Control</a>
       </nav>
-      <div id="app">
-        {{ message }}
-      </div>
     <!--탭 내용들-->
     <div class="tab-content mt-3" id="tabContent">
 
@@ -57,18 +54,11 @@
         <div class="container">
             <div class="card" >
               <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                <form action="/login/sign" method="POST" enctype="application/json">
-                  First name:<br>
-                  <input type="text" name="firstname" value="Mickey">
-                  <br>
-                  Last name:<br>
-                  <input type="text" name="lastname" value="Mouse">
-                  <br><br>
-                  <input type="submit" value="Submit">
-                </form> 
-                <p class="card-text">Control Device is here.</p>
+                  <p class="float-left align-self-center mr-3">LED SWITCH</p>
+                  <div class="btn-group" role="group" aria-label="Basic example">
+                    <button type="button" class="btn btn-outline-dark" onclick="onLed(1, 1)">ON</button>
+                    <button type="button" class="btn btn-outline-dark" onclick="onLed(1, 0)">OFF</button>
+                  </div>
               </div>
             </div>
         </div>

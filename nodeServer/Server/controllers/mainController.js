@@ -1,7 +1,6 @@
 
 var mainController = {
     mainPage : function(req, res){
-        console.log("login status:" + req.session.login);
         if( req.session.login ){
             res.render("dashboard/dashboard");
         }else{
@@ -12,13 +11,15 @@ var mainController = {
         res.render("login/login");
     },
     login : function(req, res){
-        console.log(req.body);
-        var reqID = req.body.userid;
-        var reqPwd = req.body.password;
+        var reqID = req.body.id;
+        var reqPwd = req.body.password+"";
+        if( reqID == "KANG" && reqPwd == "0987"){
+            req.session.login = true;
+            req.session.userId = reqID;
+        }else{
+            req.session.login = false;
+        }
 
-        req.session.login = true;
-        req.session.userId = reqID;
-        req.session.password = reqPwd;
         res.json( { login : req.session.login });
     },
     logout : function(req, res){
@@ -27,10 +28,8 @@ var mainController = {
     },
     auth_check : function(req, res){
         if( req.session.login ){
-            console.log("login authentication complete.");
             return next();
         }else{
-            console.log("access denine.");
             return res.redirect("/loginPage");
         }
     }

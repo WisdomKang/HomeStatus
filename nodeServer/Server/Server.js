@@ -13,6 +13,7 @@ logger.info("Server Setting & Connection Start" , label);
 //MongoDB Setting
 var mongoSetting = require('./connProccess/mongoConnect');
 
+
 //session setting
 app.use( session({
     saveUninitialized:true,
@@ -22,8 +23,8 @@ app.use( session({
 }));
 
 //MQTT Connect setting
-var mqttConnect = require('./connProccess/mqttConnect');
-//mqttConnect.MqttConnect();
+require('./connProccess/mqttConnect');
+
 
 //view engine setting
 app.set('view engine', 'ejs');                              //서버 뷰 엔진 설정
