@@ -23,6 +23,6 @@ npm start       //서버 시작!
     - views          (폴더별로 view구성 - html, js, css 파일)
     - asset          (이미지 파일폴더)
 
-Server.js           시작스크립트
+Server.js           시작스크립트  
 LogModule.js        Log 설정!
 
