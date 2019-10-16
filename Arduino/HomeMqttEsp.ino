@@ -7,6 +7,9 @@ const char* ssid = "MoonHome";
 const char* password = "ans619092rkd";
 const char* mqtt_server = "192.168.12.11";
 
+const char* mqtt_user = "homeDevice";
+const char* mqtt_pswd = "home4975";
+
 WiFiClient espClient;
 PubSubClient client(espClient);
 
@@ -18,8 +21,9 @@ void setup_wifi() {
     delay(500);
     Serial.print("00");
   }
-  randomSeed(micros());
   Serial.print("01");
+
+  delay(5000);
 }
 
 void callback(char* topic, byte* payload, unsigned int length) {
@@ -36,23 +40,17 @@ void callback(char* topic, byte* payload, unsigned int length) {
 void reconnect() {
   // Loop until we're reconnected
   while (!client.connected()) {
-
-    
-    // Create a random client ID
-    String clientId = "ESP8266Client-";
-    clientId += String(random(0xffff), HEX);
-
     delay(1000);
-
-    if (client.connect(clientId.c_str())) {
+    if (client.connect(mqtt_user, mqtt_user, mqtt_pswd)) {
       client.publish("home/status","esp connected");
       client.subscribe("home/control/#");
       Serial.print("11");
     } else {
       Serial.print("10");
-      delay(5000);
     }
   }
+
+  delay(1000);
 }
 
 void setup() {
