@@ -20,7 +20,7 @@
     "express": "^4.17.1",
     "express-session": "^1.16.2",
     "moment": "^2.24.0",
-    "moment-timezone": "^0.5.26",
+    "moment-timezone": "^0.5.35",
     "mongoose": "^5.7.5",
     "mqtt": "^3.0.0",
     "winston": "^3.2.1",
